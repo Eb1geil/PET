@@ -1,0 +1,169 @@
+   @using PET1.Domain.Entities;
+    @using PET1.Domain.Models;
+
+    @model ListModel<Game>
+
+    @{
+        var request = ViewContext.HttpContext.Request;
+        var returnUrl = request.Path + request.QueryString.ToUriComponent();
+
+        ViewData["Title"] = "Index";
+
+        IEnumerable<Category> categories = ViewData["typeList"] as IEnumerable<Category>;
+
+        int prevPage = (Model.CurrentPage == 1) ? 1 : Model.CurrentPage - 1;
+        int nextPage = (Model.CurrentPage == Model.TotalPages) ? Model.TotalPages : Model.CurrentPage + 1;
+    }
+<style>
+    .row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+    }
+
+    .card {
+        position: relative;
+        width: 20rem;
+        overflow: hidden;
+        border-radius: 25%;
+    }
+
+        .card img {
+            display: block;
+            background: black;
+            width: 100%;
+            height: auto;
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover img {
+            transform: scale(1.1);
+        }
+
+    .card-body {
+        padding: 1rem;
+        background-color: rgba(0, 0, 0, 0.5); /* Полупрозрачный фон */
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        color: #fff; /* Цвет текста */
+        opacity: 0; /* Начальная прозрачность */
+        transition: opacity 0.3s ease;
+    }
+
+    .card:hover .card-body {
+        opacity: 1; /* Показываем при наведении */
+    }
+
+    .card-body-content {
+        position: relative;
+        z-index: 1; /* Поднять текст над фоном */
+    }
+
+    .card-body-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 0; /* Задний фон */
+        background-color: rgba(0, 0, 0, 0); /* Цвет заднего фона */
+        opacity: 0; /* Начальная прозрачность */
+        transition: opacity 0.3s ease;
+    }
+
+    .card:hover .card-body-overlay {
+        opacity: 1; /* Показываем задний фон при наведении */
+    }
+
+    .btn-primary {
+        display: block;
+        width: 100%;
+        margin-top: auto;
+        transition: 0.3s ease-in-out;
+    }
+
+        .btn-primary:hover {
+            transform: translateY(-5px);
+        }
+
+        .btn-primary:active {
+            transform: translateY(0);
+        }
+</style>
+
+
+    <h1>Games</h1>
+
+<div class="col-2 border-2">
+    <ul class="nav ">
+        <li class="nav-item dropdown">
+            <a class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Жанр</a>
+            <ul class="dropdown-menu">
+                <li>
+                    <a class="dropdown-item" asp-controller="Product" asp-action="Index" asp-route-group="Game Genres" asp-route-category="">Все жанры</a>
+                </li>
+                @if (categories != null)
+                {
+                    foreach (var item in categories)
+                    {
+                        <li>
+                            <a class="dropdown-item" asp-controller="Product" asp-action="Index" asp-route-group="Game Genres" asp-route-category="@item.NormalizedName">@item.Name</a>
+                        </li>
+                        
+                    }
+                }
+                else
+                {
+                    <li>
+                        <a class="dropdown-item" href="#">Нет доступных жанров</a>
+                    </li>
+                }
+            </ul>
+        </li>
+    </ul>
+</div>
+
+    <div class="row" style="position:relative;">
+        @if (Model == null || Model.Items == null || Model.Items.Count == 0)
+        {
+            <div class="col-18">
+                <p>No products found.</p>
+            </div>
+        }
+        else
+        {
+            @foreach (var game in Model.Items)
+            {
+                    <div class="card" style =" width: 20rem; ">
+                        <img src="@game.ImgPath" class="card-img-top" alt="@game.Name">
+                        <div class="card-body">
+                            <h5 class="card-title">@game.Name</h5>
+                        <h6 class="card-subtitle mb-2 text-muted"> @game.Description</h6>
+                            <p class="card-text">Price: @game.Price $</p>
+                            <a href="#" class="btn btn-primary">Add to Cart</a>
+                        </div>
+                    </div>
+            }
+        }
+    </div>
+
+    <nav aria-label="Page navigation example">
+        <ul class="pagination justify-content-end">
+            <li class="page-item @(Model.CurrentPage == 1 ? "disabled" : "")">
+                <a class="page-link" asp-controller="Product" asp-action="Index" asp-route-pageNo="@prevPage" asp-route-category="@ViewData["currentType"]">Previous</a>
+            </li>
+            @for (int i = 1; i <= Model.TotalPages; i++)
+            {
+                <li class="page-item @(Model.CurrentPage == i ? "active" : "")">
+                    <a class="page-link" asp-controller="Product" asp-action="Index" asp-route-pageNo="@i" asp-route-category="@ViewData["currentType"]">@i</a>
+                </li>
+            }
+            <li class="page-item @(Model.CurrentPage == Model.TotalPages ? "disabled" : "")">
+                <a class="page-link" asp-controller="Product" asp-action="Index" asp-route-pageNo="@nextPage" asp-route-category="@ViewData["currentType"]">Next</a>
+            </li>
+        </ul>
+    </nav>
+

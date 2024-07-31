@@ -1,0 +1,14 @@
+C:\Users\Eb1geil\source\repos\PET1\PET1.Domain\bin\Debug\net8.0\PET1.Domain.deps.json
+C:\Users\Eb1geil\source\repos\PET1\PET1.Domain\bin\Debug\net8.0\PET1.Domain.dll
+C:\Users\Eb1geil\source\repos\PET1\PET1.Domain\bin\Debug\net8.0\PET1.Domain.pdb
+C:\Users\Eb1geil\source\repos\PET1\PET1.Domain\obj\Debug\net8.0\PET1.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Eb1geil\source\repos\PET1\PET1.Domain\obj\Debug\net8.0\PET1.Domain.AssemblyInfoInputs.cache
+C:\Users\Eb1geil\source\repos\PET1\PET1.Domain\obj\Debug\net8.0\PET1.Domain.AssemblyInfo.cs
+C:\Users\Eb1geil\source\repos\PET1\PET1.Domain\obj\Debug\net8.0\PET1.Domain.csproj.CoreCompileInputs.cache
+C:\Users\Eb1geil\source\repos\PET1\PET1.Domain\obj\Debug\net8.0\PET1.Domain.dll
+C:\Users\Eb1geil\source\repos\PET1\PET1.Domain\obj\Debug\net8.0\refint\PET1.Domain.dll
+C:\Users\Eb1geil\source\repos\PET1\PET1.Domain\obj\Debug\net8.0\PET1.Domain.pdb
+C:\Users\Eb1geil\source\repos\PET1\PET1.Domain\obj\Debug\net8.0\ref\PET1.Domain.dll
+C:\Users\Eb1geil\source\repos\PET1\PET1.Domain\obj\Debug\net8.0\PET1.Domain.csproj.AssemblyReference.cache
+C:\Users\Eb1geil\source\repos\PET1\PET1.Domain\bin\Debug\net8.0\PET1.Domain.runtimeconfig.json
+C:\Users\Eb1geil\source\repos\PET1\PET1.Domain\obj\Debug\net8.0\PET1.Domain.genruntimeconfig.cache

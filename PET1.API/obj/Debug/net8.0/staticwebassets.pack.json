@@ -1,0 +1,45 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\Eb1geil\\source\\repos\\PET1\\PET1.API\\wwwroot\\Images\\3492868.gif",
+      "PackagePath": "staticwebassets\\Images\\3492868.gif"
+    },
+    {
+      "Id": "C:\\Users\\Eb1geil\\source\\repos\\PET1\\PET1.API\\wwwroot\\Images\\AQn7.gif",
+      "PackagePath": "staticwebassets\\Images\\AQn7.gif"
+    },
+    {
+      "Id": "C:\\Users\\Eb1geil\\source\\repos\\PET1\\PET1.API\\wwwroot\\Images\\Elden_Ring.jpg",
+      "PackagePath": "staticwebassets\\Images\\Elden_Ring.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Eb1geil\\source\\repos\\PET1\\PET1.API\\wwwroot\\Images\\Guard.jpg",
+      "PackagePath": "staticwebassets\\Images\\Guard.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Eb1geil\\source\\repos\\PET1\\PET1.API\\wwwroot\\Images\\Oppen.jpg",
+      "PackagePath": "staticwebassets\\Images\\Oppen.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Eb1geil\\source\\repos\\PET1\\PET1.API\\wwwroot\\Images\\Shog.jpg",
+      "PackagePath": "staticwebassets\\Images\\Shog.jpg"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.PET1.API.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.PET1.API.props",
+      "PackagePath": "build\\PET1.API.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.PET1.API.props",
+      "PackagePath": "buildMultiTargeting\\PET1.API.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.PET1.API.props",
+      "PackagePath": "buildTransitive\\PET1.API.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
